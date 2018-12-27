@@ -15,7 +15,7 @@ pipeline {
 		}
 		stage('Deployment') {
 			steps {
-				sh 'sshpass -p "yamini" scp root/.jenkins/workspace/Gamut_pipeline/target/Pipeline.war yamini@172.17.0.3:/home/yamini/softwares/apache-tomcat-8.5.35/webapps'
+				sh 'sshpass -p "yamini" scp target/Pipeline.war yamini@172.17.0.3:/home/yamini/softwares/apache-tomcat-8.5.35/webapps'
 				
 			}
 		}
