@@ -1,7 +1,4 @@
-FROM ubuntu
-RUN apt-get update
-RUN apt-get install open-jdk7
-RUN apt-get install tomcat
-COPY target/Pipeline.war user/local/tomcat/webapps
-ENTRYPOINT startup.sh
+FROM tomcat:7.0
+COPY target/Pipeline.war /usr/local/tomcat/webapps
+ENTRYPOINT /usr/local/tomcat/bin/startup.sh && bash
 
